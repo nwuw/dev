@@ -1,0 +1,30 @@
+definitions:
+  response.IndexResponse:
+    properties:
+      code:
+        example: 200
+        type: integer
+      data:
+        example: success or fail
+        type: string
+      message:
+        example: 操作成功 or 操作失败
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /:
+    get:
+      description: 系统首页后端路由
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.IndexResponse'
+      summary: index
+      tags:
+      - index
+swagger: "2.0"
